@@ -32,10 +32,7 @@ model = CNNLSTM_ImageRadFusion(input_dim=513, hidden_dim=128)
 
 # Load trọng số
 try:
-    model.load_state_dict(torch.load(
-        r"D:\Đại học thủy lợi\Phân tích chuỗi thời gian\demo\best_model_1.pth",
-        map_location=torch.device('cpu')
-    ))
+    model.load_state_dict(torch.load("best_model_1.pth", map_location=torch.device('cpu')))
     model.eval()
 except Exception as e:
     st.error(f"❌ Không thể load model: {e}")
